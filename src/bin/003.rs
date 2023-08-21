@@ -24,9 +24,8 @@ fn main() {
     dbg!(mpd);
 }
 
-#[inline(always)]
 fn is_prime(n: u64) -> bool {
-    for d in 2..=(n / 3) + 1 {
+    for d in 2..=((n as f64).sqrt().floor() as u64) {
         if n % d == 0 {
             return false;
         }
